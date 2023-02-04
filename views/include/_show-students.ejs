@@ -1,0 +1,18 @@
+<% for(var i = 0; i < students.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= students[i].studentname %></td>
+        <td><%= students[i].studentfather %></td>
+        <td><%= students[i].studentage %></td>
+        <td><%= students[i].studentgender %></td>
+        <td><%= students[i].studentaddress %></td>
+        <td><%= students[i].studentcourse %></td>
+        <td><%= students[i].studentjoindate %></td>
+        <td><%= students[i].studentenddate %></td>
+        <td>
+            <a href="/delete-student/<%= students[i].studentid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+        </td>
+    </tr>
+<% } %>

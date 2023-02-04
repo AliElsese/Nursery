@@ -1,0 +1,102 @@
+<%- include('include/_headerAdmin') %>
+
+
+    <div class="content">
+        <div class="news-table m-5">
+    
+            <div class="col-md-12 text-center mt-5 pt-5">
+                <a href="/dashboard-trainers" class="get-started-btn">جميع المدرسين</a>
+            </div>
+
+            <% if(typeof message != 'undefined') { %>
+                <div class="col-md-12 text-center">
+                    <h4 class="alert alert-danger mt-4">
+                        <%= message %>
+                    </h4>
+                </div>
+            <% } %>
+    
+            <div class="col-md-12 text text-center mt-5">
+                <div class="form-title">
+                    <h2>مدرس جديد</h2>
+                    <div class="separator mb-4"></div>
+                </div>
+            </div>
+    
+            <form action="/addTrainer" method="post" id="add_trainer">
+                  
+                <div class="row mt-3">
+                    <div class="col-md-12 text-right">
+    
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="trainer_name">اسم المدرس</label>  
+                                
+                                <input id="trainer_name" name="trainername" placeholder="اسم المدرس" class="form-control" type="text">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="trainer_specialty">التخصص</label>  
+                                
+                                <input id="trainer_specialty" name="trainerspecialty" placeholder="التخصص" class="form-control" type="text">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="trainer_course">الفصل</label>  
+                                
+                                <select name="trainercourse" id="" class="form-control">
+                                    <% for(var i = 0; i < courses.length; i++) { %>
+                                        <option value="<%= courses[i].coursename %>">
+                                            <%= courses[i].coursename %>
+                                        </option>
+                                    <% } %>
+                                </select>
+                            </div>
+
+                            <div class="col-md-1 d-md-block"></div>
+    
+                        </div>
+
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="trainer_user">اسم المستخدم</label>  
+                                
+                                <input id="trainer_user" name="traineruser" placeholder="اسم المستخدم" class="form-control" type="text">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="trainer_password">كلمة السر</label>  
+                                
+                                <input id="trainer_password" name="trainerpassword" placeholder="كلمة السر" class="form-control" type="text">
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+    
+                        <div class="row mb-2">
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                    <button type="submit" class="get-started-btn">  حفظ </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </form>
+    
+        </div>
+    </div>
+
+
+<%- include('include/_footerAdmin') %>

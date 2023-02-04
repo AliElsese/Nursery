@@ -1,0 +1,16 @@
+<% for(var i = 0; i < students.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= students[i].studentname %></td>
+        <td><%= students[i].studentage %></td>
+        <td>
+            <a href="/write-attendance/<%= students[i].studentid %>" style="display: inline-block; color: rgb(0, 139, 53);" class="delete"> 
+                تسجيل الحضور 
+            </a>
+            <br>
+            <a href="/write-report/<%= students[i].studentid %>" style="display: inline-block; color: rgb(0, 9, 139);" class="delete"> 
+                تسجيل تقرير 
+            </a>
+        </td>
+    </tr>
+<% } %>

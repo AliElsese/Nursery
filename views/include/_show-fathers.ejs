@@ -1,0 +1,14 @@
+<% for(var i = 0; i < fathers.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= fathers[i].fathername %></td>
+        <td><%= fathers[i].fatherkids %></td>
+        <td><%= fathers[i].fatheruser %></td>
+        <td><%= fathers[i].fatherpassword %></td>
+        <td>
+            <a href="/delete-father/<%= fathers[i].fatherid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+        </td>
+    </tr>
+<% } %>

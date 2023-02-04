@@ -1,0 +1,63 @@
+<%- include('include/_headerAdmin') %>
+
+
+    <div class="content">
+        <div class="news-table m-5">
+    
+            <div class="col-md-12 text-center mt-5 pt-5">
+                <a href="/dashboard-courses" class="get-started-btn">جميع الفصول</a>
+            </div>
+
+            <% if(typeof message != 'undefined') { %>
+                <div class="col-md-12 text-center">
+                    <h4 class="alert alert-danger mt-4">
+                        <%= message %>
+                    </h4>
+                </div>
+            <% } %>
+    
+            <div class="col-md-12 text text-center mt-5">
+                <div class="form-title">
+                    <h2>فصل جديد</h2>
+                    <div class="separator mb-4"></div>
+                </div>
+            </div>
+    
+            <form action="/addCourse" method="post" id="add_course">
+                  
+                <div class="row mt-3">
+                    <div class="col-md-12 text-right">
+    
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-8">
+                                <label class="control-label" for="course_name">اسم الفصل</label>  
+                                <input type="hidden" name="id" value="">
+                                <input id="course_name" name="coursename" placeholder="اسم الفصل" class="form-control" type="text">
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+    
+                        <div class="row mb-2">
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                    <button type="submit" class="get-started-btn">  حفظ </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </form>
+    
+        </div>
+    </div>
+
+
+<%- include('include/_footerAdmin') %>

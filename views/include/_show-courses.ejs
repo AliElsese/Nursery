@@ -1,0 +1,11 @@
+<% for(var i = 0; i < courses.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= courses[i].coursename %></td>
+        <td>
+            <a href="/delete-course/<%= courses[i].courseid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+        </td>
+    </tr>
+<% } %>

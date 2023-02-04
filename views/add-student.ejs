@@ -1,0 +1,151 @@
+<%- include('include/_headerAdmin') %>
+
+
+    <div class="content">
+        <div class="news-table m-5">
+    
+            <div class="col-md-12 text-center mt-5 pt-5">
+                <a href="/dashboard-students" class="get-started-btn">جميع الطلاب</a>
+            </div>
+
+            <% if(typeof message != 'undefined') { %>
+                <div class="col-md-12 text-center">
+                    <h4 class="alert alert-danger mt-4">
+                        <%= message %>
+                    </h4>
+                </div>
+            <% } %>
+    
+            <div class="col-md-12 text text-center mt-5">
+                <div class="form-title">
+                    <h2>طالب جديد</h2>
+                    <div class="separator mb-4"></div>
+                </div>
+            </div>
+    
+            <form action="/addStudent" method="post" id="add_trainer">
+                  
+                <div class="row mt-3">
+                    <div class="col-md-12 text-right">
+    
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="student_name">اسم الطالب</label>  
+                                
+                                <input id="student_name" name="studentname" placeholder="اسم الطالب" class="form-control" type="text">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="student_father">اسم ولي الامر</label>  
+                                
+                                <select name="studentfather" id="" class="form-control">
+                                    <% for(var i = 0; i < fathers.length; i++) { %>
+                                        <option value="<%= fathers[i].fathername %>">
+                                            <%= fathers[i].fathername %>
+                                        </option>
+                                    <% } %>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="student_age">سن الطالب</label>  
+                                
+                                <input id="student_age" name="studentage" placeholder="سن الطالب" class="form-control" type="number">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="student_gender">نوع الطالب</label>  
+                                
+                                <select name="studentgender" id="" class="form-control">
+                                    <option value="انثى">
+                                        انثى
+                                    </option>
+                                    <option value="ذكر">
+                                        ذكر
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="student_address">عنوان الطالب</label>  
+                                
+                                <input id="student_address" name="studentaddress" placeholder="عنوان الطالب" class="form-control" type="text">
+                            </div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="trainer_user">اسم الفصل</label>  
+                                
+                                <select name="studentcourse" id="" class="form-control">
+                                    <% for(var i = 0; i < courses.length; i++) { %>
+                                        <option value="<%= courses[i].coursename %>">
+                                            <%= courses[i].coursename %>
+                                        </option>
+                                    <% } %>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="trainer_user">تاريخ الاشتراك</label>  
+                                
+                                <input id="trainer_user" name="studentjoindate" placeholder="تاريخ الاشتراك" class="form-control" type="date">
+                            </div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="trainer_user">تاريخ الانتهاء</label>  
+                                
+                                <input id="trainer_user" name="studentenddate" placeholder="تاريخ hghkjihx" class="form-control" type="date">
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+    
+                        <div class="row mb-2">
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                    <button type="submit" class="get-started-btn">  حفظ </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </form>
+    
+        </div>
+    </div>
+
+
+<%- include('include/_footerAdmin') %>

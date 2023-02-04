@@ -1,0 +1,15 @@
+<% for(var i = 0; i < trainers.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= trainers[i].trainername %></td>
+        <td><%= trainers[i].trainerspecialty %></td>
+        <td><%= trainers[i].trainercourse %></td>
+        <td><%= trainers[i].traineruser %></td>
+        <td><%= trainers[i].trainerpassword %></td>
+        <td>
+            <a href="/delete-trainer/<%= trainers[i].trainerid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+        </td>
+    </tr>
+<% } %>

@@ -1,0 +1,90 @@
+<%- include('include/_headerAdmin') %>
+
+
+    <div class="content">
+        <div class="news-table m-5">
+    
+            <div class="col-md-12 text-center mt-5 pt-5">
+                <a href="/dashboard-fathers" class="get-started-btn">جميع اولياء الامور</a>
+            </div>
+
+            <% if(typeof message != 'undefined') { %>
+                <div class="col-md-12 text-center">
+                    <h4 class="alert alert-danger mt-4">
+                        <%= message %>
+                    </h4>
+                </div>
+            <% } %>
+    
+            <div class="col-md-12 text text-center mt-5">
+                <div class="form-title">
+                    <h2>ولي امر جديد</h2>
+                    <div class="separator mb-4"></div>
+                </div>
+            </div>
+    
+            <form action="/addFather" method="post" id="add_father">
+                  
+                <div class="row mt-3">
+                    <div class="col-md-12 text-right">
+    
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="father_name">الاسم</label>  
+                                
+                                <input id="father_name" name="fathername" placeholder="الاسم" class="form-control" type="text">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="father_kids">عدد الاطفال</label>  
+                                
+                                <input id="father_kids" name="fatherkids" placeholder="عدد الاطفال" class="form-control" type="number">
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="father_user">اسم المستخدم</label>  
+                                
+                                <input id="father_user" name="fatheruser" placeholder="اسم المستخدم" class="form-control" type="text">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="father_password">كلمة السر</label>  
+                                
+                                <input id="father_password" name="fatherpassword" placeholder="كلمة السر" class="form-control" type="text">
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+    
+                        <div class="row mb-2">
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                    <button type="submit" class="get-started-btn">  حفظ </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </form>
+    
+        </div>
+    </div>
+
+
+<%- include('include/_footerAdmin') %>

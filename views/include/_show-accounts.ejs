@@ -1,0 +1,13 @@
+<% for(var i = 0; i < accounts.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= accounts[i].accountcoast %></td>
+        <td><%= accounts[i].accounttype %></td>
+        <td><%= accounts[i].accountdate %></td>
+        <td>
+            <a href="/delete-account/<%= accounts[i].accountid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+        </td>
+    </tr>
+<% } %>

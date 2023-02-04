@@ -1,0 +1,76 @@
+<%- include('include/_headerAdmin') %>
+
+
+    <div class="content">
+        <div class="news-table m-5">
+    
+            <div class="col-md-12 text-center mt-5 pt-5">
+                <a href="/dashboard-accounts" class="get-started-btn">جميع الحسابات</a>
+            </div>
+
+            <% if(typeof message != 'undefined') { %>
+                <div class="col-md-12 text-center">
+                    <h4 class="alert alert-danger mt-4">
+                        <%= message %>
+                    </h4>
+                </div>
+            <% } %>
+    
+            <div class="col-md-12 text text-center mt-5">
+                <div class="form-title">
+                    <h2>عملية جديد</h2>
+                    <div class="separator mb-4"></div>
+                </div>
+            </div>
+    
+            <form action="/addAccount" method="post" id="add_account">
+                  
+                <div class="row mt-3">
+                    <div class="col-md-12 text-right">
+    
+                        <div class="row mb-2">
+    
+                            <div class="col-md-2 d-md-block"></div>
+    
+                            <!-- Text input-->
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="account_coast">المبلغ</label>  
+                                
+                                <input id="account_coast" name="accountcoast" placeholder="المبلغ" class="form-control" type="text">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="account_coast">نوع العملية</label>  
+                                
+                                <select name="accounttype" id="" class="form-control">
+                                    <option value="صادر">
+                                        صادر
+                                    </option>
+                                    <option value="وارد">
+                                        وارد
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2 d-md-block"></div>
+    
+                        </div>
+    
+                        <div class="row mb-2">
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                    <button type="submit" class="get-started-btn">  حفظ </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </form>
+    
+        </div>
+    </div>
+
+
+<%- include('include/_footerAdmin') %>
